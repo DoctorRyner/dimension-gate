@@ -1,0 +1,65 @@
+2022-07-28 22:23:12.4430000 [client] INFO Writing client log to file /Users/local/git/dimension-gate/scripting-api/logs.txt
+2022-07-28 22:23:12.4440000 [client] INFO Finding haskell-language-server
+2022-07-28 22:23:12.4450000 [client] INFO Searching for server executables haskell-language-server-wrapper,haskell-language-server in $PATH
+2022-07-28 22:23:12.4460000 [client] INFO $PATH environment variable: /Users/local/.bun/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/local/.nimble/bin:/Users/local/.cabal/bin:/Users/local/.ghcup/bin:/Users/local/Library/pnpm:/opt/homebrew/bin:/Users/local/Library/Android/sdk/platform-tools:/opt/homebrew/Cellar/node/*/bin/:/Users/local/.wurst:/Users/local/.cabal/bin/:/Users/local/.local/bin:/Users/local/.idris2/bin:/Users/local/git/arcanist/bin/:/Users/local/.emacs.d/bin
+2022-07-28 22:23:12.4490000 [client] INFO Found server executable in $PATH: haskell-language-server-wrapper
+2022-07-28 22:23:12.4500000 [client] INFO Activating the language server in working dir: /Users/local/git/dimension-gate/scripting-api (the workspace folder)
+2022-07-28 22:23:12.4500000 [client] INFO run command: haskell-language-server-wrapper --lsp -l logs.txt
+2022-07-28 22:23:12.4500000 [client] INFO debug command: haskell-language-server-wrapper --lsp -l logs.txt
+2022-07-28 22:23:12.4500000 [client] INFO server environment variables:
+2022-07-28 22:23:12.4510000 [client] INFO Starting language server
+2022-07-28T22:23:17.318202Z | Info | haskell-language-server version: 1.7.0.0 (GHC: 9.2.2) (PATH: /Users/local/.ghcup/hls/1.7.0.0/lib/haskell-language-server-1.7.0.0/bin/haskell-language-server-9.2.2)
+2022-07-28T22:23:17.318388Z | Info | Directory: /Users/local/git/dimension-gate/scripting-api
+2022-07-28T22:23:17.318416Z | Info | Starting (haskell-language-server) LSP server...
+  GhcideArguments {argsCommand = LSP, argsCwd = Nothing, argsShakeProfiling = Nothing, argsTesting = False, argsExamplePlugin = False, argsDebugOn = False, argsLogFile = Just "logs.txt", argsThreads = 0, argsProjectGhcVersion = False}
+  PluginIds: [ pragmas
+             , floskell
+             , fourmolu
+             , ormolu
+             , stylish-haskell
+             , rename
+             , callHierarchy
+             , class
+             , eval
+             , importLens
+             , qualifyImportedNames
+             , refineImports
+             , moduleName
+             , alternateNumberFormat
+             , selectionRange
+             , changeTypeSignature
+             , ghcide-hover-and-symbols
+             , ghcide-code-actions-imports-exports
+             , ghcide-code-actions-type-signatures
+             , ghcide-code-actions-bindings
+             , ghcide-code-actions-fill-holes
+             , ghcide-completions
+             , ghcide-type-lenses
+             , ghcide-core
+             , LSPRecorderCallback ]
+2022-07-28T22:23:17.318489Z | Info | Logging heap statistics every 60.00s
+2022-07-28T22:23:17.384525Z | Info | Staring LSP server...
+If you are seeing this in a terminal, you probably should have run WITHOUT the --lsp option!
+2022-07-28T22:23:17.399957Z | Info | Started LSP server in 0.02s
+2022-07-28T22:23:18.448588Z | Info | Registering IDE configuration: IdeConfiguration {workspaceFolders = fromList [NormalizedUri 7729925552093904597 "file:///Users/local/git/dimension-gate/scripting-api"], clientSettings = hashed Nothing}
+2022-07-28T22:23:18.455079Z | Info | Cradle path: src/DG/App.hs
+2022-07-28T22:23:18.455182Z | Warning | No [cradle](https://github.com/mpickering/hie-bios#hie-bios) found for src/DG/App.hs.
+Proceeding with [implicit cradle](https://hackage.haskell.org/package/implicit-hie).
+You should ignore this message, unless you see a 'Multi Cradle: No prefixes matched' error.
+2022-07-29 02:23:18.598997 [ThreadId 63] INFO hie-bios:	Stack has not been tested with GHC versions above 9.0, and using 9.2.2, this may fail
+2022-07-29 02:23:18.641189 [ThreadId 63] INFO hie-bios:	Stack has not been tested with Cabal versions above 3.4, but version 3.6.3.0 was found, this may fail
+2022-07-29 02:23:18.986701 [ThreadId 63] INFO hie-bios:	dimension-gate> initial-build-steps (lib)
+2022-07-29 02:23:19.217571 [ThreadId 63] INFO hie-bios:	Configuring GHCi with the following packages: dimension-gate
+2022-07-29 02:23:19.385081 [ThreadId 118] INFO hie-bios:	Stack has not been tested with GHC versions above 9.0, and using 9.2.2, this may fail
+2022-07-29 02:23:19.427701 [ThreadId 118] INFO hie-bios:	Stack has not been tested with Cabal versions above 3.4, but version 3.6.3.0 was found, this may fail
+2022-07-29 02:23:19.555404 [ThreadId 118] INFO hie-bios:	Stack has not been tested with GHC versions above 9.0, and using 9.2.2, this may fail
+2022-07-29 02:23:19.594885 [ThreadId 118] INFO hie-bios:	Stack has not been tested with Cabal versions above 3.4, but version 3.6.3.0 was found, this may fail
+2022-07-29 02:23:19.60037 [ThreadId 120] INFO hie-bios:	/Users/local/git/dimension-gate/scripting-api/.stack-work/install/aarch64-osx/422d4162adf6ae5544bfc438ec44b1ac8493c15b02b813e83f9a891d5b3f079d/9.2.2/pkgdb:/Users/local/.stack/snapshots/aarch64-osx/422d4162adf6ae5544bfc438ec44b1ac8493c15b02b813e83f9a891d5b3f079d/9.2.2/pkgdb:/Users/local/.stack/programs/aarch64-osx/ghc-9.2.2/lib/ghc-9.2.2/lib/package.conf.d
+2022-07-28T22:23:20.674825Z | Info | Interface files cache directory: /Users/local/.cache/ghcide/main-88bfa69b349c213599da3c22d0b8ba6fdd2b6c9f
+2022-07-28T22:23:20.674975Z | Info | Making new HscEnv. In-place unit ids: [main]
+2022-07-28T22:23:23.110457Z | Info | Typechecking reverse dependecies for NormalizedFilePath "/Users/local/git/dimension-gate/scripting-api/src/DG/App.hs": [  ]
+2022-07-28T22:23:24.317977Z | Info | Typechecking reverse dependecies for NormalizedFilePath "/Users/local/git/dimension-gate/scripting-api/src/DG/App.hs": [  ]
+2022-07-28T22:23:25.387212Z | Info | Typechecking reverse dependecies for NormalizedFilePath "/Users/local/git/dimension-gate/scripting-api/src/DG/App.hs": [  ]
+2022-07-28T22:23:26.906796Z | Info | Typechecking reverse dependecies for NormalizedFilePath "/Users/local/git/dimension-gate/scripting-api/src/DG/App.hs": [  ]
+2022-07-28T22:23:28.221719Z | Info | Typechecking reverse dependecies for NormalizedFilePath "/Users/local/git/dimension-gate/scripting-api/src/DG/App.hs": [  ]
+2022-07-28T22:23:30.224697Z | Info | Reactor thread stopped

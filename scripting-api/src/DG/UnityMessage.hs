@@ -27,19 +27,20 @@ data ResultWithID json = ResultWithID
     , body :: json
     }
 
-requestUnityData :: (FromJSON json, FromJSON result) => UnityMessage json -> UIO (Maybe (ResultWithID result))
-requestUnityData msg = do
-    state <- ask
+-- requestUnityData :: (FromJSON json, FromJSON result) => UnityMessage json -> UIO (Maybe (ResultWithID result))
+-- requestUnityData msg = do
+--     state <- ask
 
-    let msgWithId = 
+--     let msgWithId = ()
 
-    liftIO $ sendUnityMessage state.connection msgWithId
+--     liftIO $ sendUnityMessage state.connection msgWithId
 
-    pure Nothing
+--     pure Nothing
 
 setCameraPosMsg :: V2 -> UnityMessage V2
 setCameraPosMsg body = UnityMessage
     { name = "setCameraPos"
     , body = Just body
+    , id   = Nothing
     }
 

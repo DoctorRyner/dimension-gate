@@ -31,6 +31,8 @@ library
       DataKinds
       ScopedTypeVariables
       DeriveAnyClass
+      DeriveGeneric
+      NamedFieldPuns
   ghc-options: -Wall -Wno-unused-do-bind
   build-depends:
       aeson

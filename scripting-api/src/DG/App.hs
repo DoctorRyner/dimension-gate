@@ -17,7 +17,7 @@ gameHandler = do
     void . liftIO . forever $ do
         message :: T.Text <- receiveData state.connection
         putStrLn $ "Got a message from the Unity: " ++ T.unpack message
-    
+
     liftIO $ sendClose state.connection (T.pack "Bye!")
 
 appHandler :: ClientApp ()
