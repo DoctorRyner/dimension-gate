@@ -35,7 +35,7 @@ if (e.Data == "Set camera to 0, 0") {
 }
 ```
 
-It means that when Haskell websockets client sends the Unity websockets server the message `Set camera to 0, 0` the function `PlayerCamera.inst.setPosition(new Vector2(0, 0));` is running in the help of the `UnityMainThreadDispatcher.Instance().Enqueue(() => { ... })` function.
+It means that when Haskell websockets client sends to the Unity websockets server the message `Set camera to 0, 0` the function `PlayerCamera.inst.setPosition(new Vector2(0, 0));` is ran with the help of the `UnityMainThreadDispatcher.Instance().Enqueue(() => { ... })` function.
 
 # Scripting API
 
