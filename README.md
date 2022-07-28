@@ -23,6 +23,7 @@ If you want to handle a message that Haskell websocket client sends, go to the `
 UnityMainThreadDispatcher.Instance().Enqueue(() => {
     // Write some Unity code
 })
+```
 
 For example, in the `OnMessage` function we have the following code:
 
