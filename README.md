@@ -39,5 +39,5 @@ It means that when Haskell websockets client sends to the Unity websockets serve
 
 # Scripting API
 
-Read the scripting-api/README.md file.
+Read the `scripting-api/README.md` file.
 
