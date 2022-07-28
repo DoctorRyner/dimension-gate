@@ -17,7 +17,7 @@ void Update () {
 
 It means when we press *Play*, focus on the game window in the Unity editor and press the *F* button, then the `"F"` message is sent to the Haskell websockets client.
 
-If you want to handle a message that Haskell websocket client sends, go to the `DimensionGateServer` class and and respond in the `OnMessage` function. BE CAREFUL, you can't just run Unity functions in the `OnMessage` callback because it's running not in the Unity thread, so to run something that uses `MonoBevarior` or some another Unity API, use the next function:
+If you want to handle a message that Haskell websocket client sends, go to the `DimensionGateServer` class and and respond in the `OnMessage` function. BE CAREFUL, you can't just run Unity functions in the `OnMessage` callback because it's running not in the Unity thread, so to run something that uses `MonoBehaviour` or some another Unity API, use the next function:
 
 ```C#
 UnityMainThreadDispatcher.Instance().Enqueue(() => {
