@@ -1,0 +1,41 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.6.
+--
+-- see: https://github.com/sol/hpack
+
+name:           dimension-gate
+version:        0.1
+build-type:     Simple
+
+library
+  exposed-modules:
+      DG.App
+      DG.Camera
+      DG.Debug
+      DG.Types
+      DG.UnityMessage
+  other-modules:
+      Paths_dimension_gate
+  hs-source-dirs:
+      src
+  default-extensions:
+      DisambiguateRecordFields
+      DuplicateRecordFields
+      OverloadedLabels
+      NoFieldSelectors
+      OverloadedRecordDot
+      LambdaCase
+      OverloadedStrings
+      ForeignFunctionInterface
+      DataKinds
+      ScopedTypeVariables
+      DeriveAnyClass
+  ghc-options: -Wall -Wno-unused-do-bind
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , text
+    , transformers
+    , websockets
+  default-language: Haskell2010

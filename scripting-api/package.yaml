@@ -1,0 +1,31 @@
+name:                dimension-gate
+version:             0.1
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+- websockets
+- transformers
+- aeson
+# - wreq
+
+default-extensions:
+- DisambiguateRecordFields
+- DuplicateRecordFields
+- OverloadedLabels
+- NoFieldSelectors
+- OverloadedRecordDot
+- LambdaCase
+- OverloadedStrings
+- ForeignFunctionInterface
+- DataKinds
+- ScopedTypeVariables
+- DeriveAnyClass
+
+ghc-options:
+- -Wall
+- -Wno-unused-do-bind
+
+library:
+  source-dirs: src
+
