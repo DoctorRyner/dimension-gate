@@ -1,6 +1,6 @@
 # Instructions
 
-To start the Unity server click the *Player* button.
+To start the Unity server click the *Play* button.
 
 DimensionGate Websockets Server starts from the DimensionGateClient script which is placed on the *Core* object in the Scene hierarchy.
 
