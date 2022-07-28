@@ -1,6 +1,6 @@
 # Instructions
 
-To start the Unity server click the *Play* button.
+To start the Unity server click the *Play* button, it's running at the following address: `ws://localhost:1234`.
 
 DimensionGate Websockets Server starts from the DimensionGateClient script which is placed on the *Core* object in the Scene hierarchy.
 
