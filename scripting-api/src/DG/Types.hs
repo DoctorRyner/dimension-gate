@@ -66,9 +66,8 @@ data Event = KeyEvent
 
 -- Server
 
-data UnityMessage json = UnityMessage
+data UnityMessage = UnityMessage
     { name :: String
-    , body :: Maybe json
+    , body :: Maybe String
     , id   :: Maybe String
     } deriving (Show, Generic, ToJSON, FromJSON)
-

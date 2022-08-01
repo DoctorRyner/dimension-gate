@@ -7,8 +7,8 @@ dependencies:
 - websockets
 - transformers
 - aeson
-# HTTP library
-# - wreq
+- uuid
+- bytestring
 
 default-extensions:
 - DisambiguateRecordFields

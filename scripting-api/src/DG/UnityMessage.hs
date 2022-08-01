@@ -6,7 +6,7 @@ import Network.WebSockets
 import Control.Monad.IO.Class
 import Control.Monad.Trans.Reader
 
-sendUnityMessage :: (ToJSON json) => UnityMessage json -> UIO ()
+sendUnityMessage :: UnityMessage -> UIO ()
 sendUnityMessage msg = do
     state <- ask
 
@@ -14,7 +14,7 @@ sendUnityMessage msg = do
 
     liftIO $ sendTextData state.connection textData
 
-receiveUnityMessage :: FromJSON json => UIO (Maybe (UnityMessage json))
+receiveUnityMessage :: UIO (Maybe UnityMessage)
 receiveUnityMessage = do
     state <- ask
 
@@ -37,10 +37,10 @@ data ResultWithID json = ResultWithID
 
 --     pure Nothing
 
-setCameraPosMsg :: V2 -> UnityMessage V2
-setCameraPosMsg body = UnityMessage
-    { name = "setCameraPos"
-    , body = Just body
-    , id   = Nothing
-    }
+-- setCameraPosMsg :: V2 -> UnityMessage
+-- setCameraPosMsg body = UnityMessage
+--     { name = "setCameraPos"
+--     , body = Just body
+--     , id   = Nothing
+--     }
 

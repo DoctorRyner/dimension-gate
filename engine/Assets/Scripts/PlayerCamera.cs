@@ -1,25 +1,29 @@
 using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour {
-    public static PlayerCamera inst;
+  public static PlayerCamera inst;
 
-    public void setPosition(Vector2 pos) {
-        gameObject.transform.position = new Vector3(
-            pos.x,
-            gameObject.transform.position.y,
-            pos.y
-        );
-    }
+  public Vector2 getPosition() {
+    return new Vector2(gameObject.transform.position.x, gameObject.transform.position.z);
+  }
 
-    public void destroyTerrain() {
-        var terrain = GameObject.Find("Terrain");
+  public void setPosition(Vector2 pos) {
+    gameObject.transform.position = new Vector3(
+      pos.x,
+      gameObject.transform.position.y,
+      pos.y
+    );
+  }
 
-        Destroy(terrain);
-    }
+  public void destroyTerrain() {
+    var terrain = GameObject.Find("Terrain");
 
-    void Awake() {
-        inst = this;
-        // setPosition(new Vector2(0, 0));
-    }
+    Destroy(terrain);
+  }
+
+  void Awake() {
+    inst = this;
+    // setPosition(new Vector2(0, 0));
+  }
 }
 
