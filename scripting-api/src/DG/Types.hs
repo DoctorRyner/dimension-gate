@@ -5,11 +5,13 @@ import Network.WebSockets
 import Data.Aeson
 import GHC.Generics
 
-data State = State
+
+
+data Network = Network
     { connection :: Connection
     }
 
-type UIO = ReaderT State IO
+type UIO = ReaderT Network IO
 
 data V2 = V2 {x, y :: Float} deriving (Show, Generic, ToJSON, FromJSON)
 

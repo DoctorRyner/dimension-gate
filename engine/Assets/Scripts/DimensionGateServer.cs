@@ -35,7 +35,7 @@ public class DimensionGateServer : WebSocketBehavior {
 
     if (data.name == "setCameraPos") {
       UnityMainThreadDispatcher.Instance().Enqueue(() => {
-        var body   = JsonUtility.FromJson<Vector2>(data.body);
+        var body = JsonUtility.FromJson<Vector2>(data.body);
         PlayerCamera.inst.setPosition(body);
       });
     }

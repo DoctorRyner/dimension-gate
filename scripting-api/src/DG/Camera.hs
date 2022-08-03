@@ -8,6 +8,8 @@ import DG.UnityMessage (sendUnityMessage, receiveUnityMessage)
 import Data.Aeson
 import Data.Maybe (fromJust)
 import Data.ByteString.Lazy.Char8
+import DG.App (messageHandler)
+import Control.Concurrent.Async.Lifted (async)
 
 setCameraPos :: V2 -> UIO ()
 setCameraPos _pos = pure ()
@@ -29,7 +31,9 @@ getCameraPos = do
                             let v2 :: V2 = fromJust $ decode $ pack body_
                             pure v2
 
-                        else loop
+                        else do 
+                            async $ messageHandler message
+                            loop
                 _ -> loop
 
     loop

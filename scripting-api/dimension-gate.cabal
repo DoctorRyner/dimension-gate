@@ -13,6 +13,7 @@ library
       DG.App
       DG.Camera
       DG.Debug
+      DG.TestData
       DG.Types
       DG.UnityMessage
   other-modules:
@@ -38,6 +39,7 @@ library
       aeson
     , base >=4.7 && <5
     , bytestring
+    , lifted-async
     , text
     , transformers
     , uuid
