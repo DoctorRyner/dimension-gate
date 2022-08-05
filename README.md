@@ -1,6 +1,11 @@
 # Instructions
 
-To start the Unity server click the *Play* button, it's running at the following address: `ws://localhost:1234`.
+1. Run Unity, open scene in Assets/Scenes
+2. Start the Unity server click the *Play* button, it's running at the following address: `ws://localhost:1234`.
+3. Run `stack repl` in dimension-gate/scripting-api
+4. Run `runDGTest` in the repl (Only works after you click *Play* because runDG connects to the Unity websocket engine on address `ws://localhost:1234`)
+
+
 
 DimensionGate Websockets Server starts from the DimensionGateClient script which is placed on the *Core* object in the Scene hierarchy.
 
