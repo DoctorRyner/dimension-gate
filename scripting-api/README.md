@@ -1,7 +1,8 @@
 # Instructions
 
-1. Run `stack repl`
-2. Run `runDGTest` in the repl (Only works after you click *Play* because runDG connects to the Unity websocket engine on address `ws://localhost:1234`)
+1. Run Unity, open scene in Assets/Scenes
+2. Run `stack repl` 
+3. Run `runDGTest` in the repl (Only works after you click *Play* because runDG connects to the Unity websocket engine on address `ws://localhost:1234`)
 
 To run something that is `IO` in the `UIO` monad you must use the `liftIO` function from the `Control.Monad.IO.Class` like this - `liftIO (putStrLn "Some text")`.
 
