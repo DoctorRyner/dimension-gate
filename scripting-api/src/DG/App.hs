@@ -13,7 +13,7 @@ import Data.UUID (toString)
 import Data.HashMap as Map
 import Data.Aeson (encode)
 import Data.ByteString.Lazy.Char8 (unpack)
-import Control.Monad.Trans.State (StateT (runStateT), get, put)
+import Control.Monad.Trans.State (StateT (runStateT), get)
 import Control.Concurrent.STM.TVar (newTVarIO, readTVarIO)
 import Control.Concurrent.STM (atomically, modifyTVar)
 
