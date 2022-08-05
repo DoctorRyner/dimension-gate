@@ -39,7 +39,9 @@ library
       aeson
     , base >=4.7 && <5
     , bytestring
+    , hashmap
     , lifted-async
+    , stm
     , text
     , transformers
     , uuid

@@ -23,6 +23,11 @@ public class DimensionGateServer : WebSocketBehavior {
 
     var data = JsonUtility.FromJson<UnityMessage>(e.Data);
 
+    if (data.name == "registerEvent") {
+      var event_ = JsonUtility.FromJson<DGEvent1>(data.body);
+      DGEventController.inst.registerEvent(new DGEvent(event_.name, data.id));
+    }
+
     if (data.name == "getCameraPos") {
       UnityMainThreadDispatcher.Instance().Enqueue(() => {
         var body       = JsonUtility.ToJson(PlayerCamera.inst.getPosition());

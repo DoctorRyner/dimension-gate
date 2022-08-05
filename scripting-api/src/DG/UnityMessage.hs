@@ -4,11 +4,11 @@ import DG.Types
 import Data.Aeson
 import Network.WebSockets
 import Control.Monad.IO.Class
-import Control.Monad.Trans.Reader
+import Control.Monad.Trans.State (get)
 
 sendUnityMessage :: UnityMessage -> UIO ()
 sendUnityMessage msg = do
-    state <- ask
+    state <- get
 
     let textData = encode msg
 
@@ -16,7 +16,7 @@ sendUnityMessage msg = do
 
 receiveUnityMessage :: UIO (Maybe UnityMessage)
 receiveUnityMessage = do
-    state <- ask
+    state <- get
 
     textData <- liftIO $ receiveData state.connection
 

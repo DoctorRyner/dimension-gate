@@ -10,6 +10,8 @@ dependencies:
 - uuid
 - bytestring
 - lifted-async
+- hashmap
+- stm
 
 default-extensions:
 - DisambiguateRecordFields

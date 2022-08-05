@@ -1,17 +1,23 @@
 module DG.Types where
 
-import Control.Monad.Trans.Reader
 import Network.WebSockets
 import Data.Aeson
 import GHC.Generics
+import Data.HashMap
+import Control.Monad.Trans.State (StateT)
+-- import Control.Concurrent.Async.Lifted (wait)
+-- import GHC.Conc
 
+data Event = Event
+    { name :: String
+    } deriving (Show, Generic, ToJSON, FromJSON)
 
-
-data Network = Network
+data State = State
     { connection :: Connection
+    , events     :: Map String (UIO ())
     }
 
-type UIO = ReaderT Network IO
+type UIO = StateT State IO
 
 data V2 = V2 {x, y :: Float} deriving (Show, Generic, ToJSON, FromJSON)
 
@@ -64,7 +70,7 @@ data Key = Q | W | E | R
 
 data KeyEvent = Pressed DG.Types.Key
 
-data Event = KeyEvent
+-- data Event = KeyEvent
 
 -- Server
 
