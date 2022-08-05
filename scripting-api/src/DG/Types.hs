@@ -5,6 +5,17 @@ import Data.Aeson
 import GHC.Generics
 import Data.HashMap
 import Control.Monad.Trans.State (StateT)
+import Control.Monad.Trans.Reader (ReaderT)
+import Control.Concurrent
+import Control.Concurrent.STM (TVar)
+-- import UnliftIO.MVar (MVar)
+-- import UnliftIO.STM (STM)
+-- import GHC.Conc (STM, TVar)
+-- import Control.Concurrent.STM.Lifted (STM)
+-- import Control.Concurrent.STM.TMVar.Lifted (TMVar)
+
+-- import Control.Monad.STM
+
 -- import Control.Concurrent.Async.Lifted (wait)
 -- import GHC.Conc
 
@@ -14,7 +25,7 @@ data Event = Event
 
 data State = State
     { connection :: Connection
-    , events     :: Map String (UIO ())
+    , events     :: TVar (Map String (UIO ()))
     }
 
 type UIO = StateT State IO

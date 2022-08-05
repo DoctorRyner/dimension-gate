@@ -14,5 +14,4 @@ testHandler = do
 testInit :: UIO ()
 testInit = do
     registerEvent (Event "keyDownSpace") testHandler
-
     pure ()
