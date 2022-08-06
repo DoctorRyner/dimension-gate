@@ -18,18 +18,22 @@ public class DimensionGateServer : WebSocketBehavior {
   public static DimensionGateServer inst;
   public static WebSocketServer wssv;
 
+  static void inUnity(System.Action f) {
+    UnityMainThreadDispatcher.Instance().Enqueue(f);
+  }
+
   protected override void OnMessage(MessageEventArgs e) {
     Debug.Log("GOT MSG: " + e.Data);
 
     var data = JsonUtility.FromJson<UnityMessage>(e.Data);
 
     if (data.name == "registerEvent") {
-      var event_ = JsonUtility.FromJson<DGEvent1>(data.body);
-      DGEventController.inst.registerEvent(new DGEvent(event_.name, data.id));
+      var event_ = JsonUtility.FromJson<Event>(data.body);
+      EventController.inst.registerEvent(new EventInstance(event_.name, data.id));
     }
 
     if (data.name == "getCameraPos") {
-      UnityMainThreadDispatcher.Instance().Enqueue(() => {
+      inUnity(() => {
         var body       = JsonUtility.ToJson(PlayerCamera.inst.getPosition());
         var camPos     = new UnityMessage(data.name, body, data.id);
         var camPosJson = JsonUtility.ToJson(camPos);
@@ -39,41 +43,19 @@ public class DimensionGateServer : WebSocketBehavior {
     }
 
     if (data.name == "setCameraPos") {
-      UnityMainThreadDispatcher.Instance().Enqueue(() => {
+      inUnity(() => {
         var body = JsonUtility.FromJson<Vector2>(data.body);
         PlayerCamera.inst.setPosition(body);
-      });
-    }
-
-    if (e.Data == "Set camera to 0, 0") {
-      UnityMainThreadDispatcher.Instance().Enqueue(() => {
-        PlayerCamera.inst.setPosition(new Vector2(0, 0));
-      });
-    }
-
-    if (e.Data == "Set camera to 5, 5") {
-      UnityMainThreadDispatcher.Instance().Enqueue(() => {
-        PlayerCamera.inst.setPosition(new Vector2(5, 5));
-      });
-    }
-
-    if (e.Data == "Destroy terrain") {
-      UnityMainThreadDispatcher.Instance().Enqueue(() => {
-        PlayerCamera.inst.destroyTerrain();
       });
     }
   }
 
 	public static void StartServer() {
     var ip = "localhost";
-    //  System.Environment.GetEnvironmentVariable("UNIP");
-
-    // Debug.Log(ip);
 
     wssv = new WebSocketServer($"ws://{ip}:1234");
 
     wssv.AddWebSocketService<DimensionGateServer>("/");
-
     wssv.Start();
 	}
 

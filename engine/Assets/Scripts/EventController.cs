@@ -3,15 +3,15 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-public class DGEventController : MonoBehaviour {
-  public static DGEventController inst;
-  public List<DGEvent> events = new List<DGEvent>();
+public class EventController : MonoBehaviour {
+  public static EventController inst;
+  public List<EventInstance> events = new List<EventInstance>();
 
   void Awake() {
     inst = this;
   }
 
-  public void registerEvent(DGEvent event_) {
+  public void registerEvent(EventInstance event_) {
     events.Add(event_);
   }
 
@@ -19,7 +19,7 @@ public class DGEventController : MonoBehaviour {
     events.Where(eve => eve.id != id);
   }
 
-  public void runEvent(DGEvent1 event_) {
+  public void runEvent(Event event_) {
     // trackers?
     if (event_.name.StartsWith("keyDown")) {
       var key_ = string.Join("", event_.name.Skip(7));

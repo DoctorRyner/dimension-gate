@@ -17,7 +17,7 @@ public class DimensionGateClient : MonoBehaviour {
       // Debug.Log("Second: " + "SomeBodyOnceToldMe".Skip(7).ToList().ToString());
     }
     if (Input.GetKeyDown(KeyCode.Space)) {
-      DGEventController.inst.runEvent(new DGEvent1("keyDownSpace"));
+      EventController.inst.runEvent(new Event("keyDownSpace"));
     }
   }
 }

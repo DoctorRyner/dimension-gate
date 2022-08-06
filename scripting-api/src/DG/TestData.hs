@@ -1,15 +1,16 @@
 module DG.TestData where
-import DG.Types (UIO, Event (Event))
+import DG.Types (UIO, Event (Event), V2 (..))
 import DG.App (runDG, registerEvent)
-import Control.Monad.IO.Class (MonadIO(liftIO))
+import DG.Camera (setCameraPos, getCameraPos)
 
 startDGTest :: IO ()
 startDGTest = runDG testInit
 
 testHandler :: UIO ()
-testHandler = do 
-    liftIO $ putStrLn "space is pressed"
-    pure ()
+testHandler = do
+    cameraPos <- getCameraPos
+
+    setCameraPos $ V2 (cameraPos.x + 1) cameraPos.y 
 
 testInit :: UIO ()
 testInit = do
